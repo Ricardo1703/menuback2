@@ -94,5 +94,13 @@ class ProductoController extends Controller
         ]);
     }
 
+    public function destroy($id){
+        $producto = Producto::findOrFail($id);
+        $producto->delete();
 
+        return response()->json([
+            "status" => 1,
+            "msg" => "Se borró correctamente."
+        ]);
+    }
 }
