@@ -32,7 +32,7 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
     Route::post('agregarPlatillo/{id}', [ProductoController::class, 'agregarPlatillo']);
     Route::post('fotoPerfil/{id}', [UserController::class, 'fotoPerfil']);
     Route::get('verFoto/{id}', [UserController::class, 'verFoto']);
-
+    Route::delete('destroy/{id}', [ProductoController::class, 'destroy']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
